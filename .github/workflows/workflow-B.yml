@@ -1,0 +1,17 @@
+name: workflow-B.yml
+
+on:
+  workflow_call:
+    inputs:
+      username:
+        required: true
+        type: string
+    
+
+jobs:
+  example_job:
+    name: Pass input 
+    runs-on: ubuntu-latest
+    steps:
+      - name: output username
+        run: echo ${{ inputs.username }}
