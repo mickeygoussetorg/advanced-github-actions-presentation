@@ -5,7 +5,13 @@ on:
 
 jobs:
   build-ubuntu:
-    name: Output username
-    uses: mickeygoussetorg/advanced-github-actions-presentation/.github/workflows/workflow-B.yml@main
-    with:
-      username: Elvis
+    runs-on: ubuntu-latest
+    steps:
+    
+      - uses: mickeygoussetorg/advanced-github-actions-presentation/.github/workflows/workflow-B.yml@main
+        with:
+          username: Elvis
+  
+      - name: please work
+        run: echo "please work"
+  
