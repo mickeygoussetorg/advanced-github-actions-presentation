@@ -1,0 +1,11 @@
+name: Call Reusable Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-ubuntu:
+    name: Output username
+    uses: mickeygoussetorg/advanced-github-actions-presentation/.github/workflows/workflow-B.yml@main
+    with:
+      username: Elvis
