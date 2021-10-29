@@ -5,7 +5,7 @@ on:
 
 jobs:
   use-reusable-workflow:
-    uses: mickeygoussetorg/advanced-github-actions-presentation/.github/workflows/workflow-B.yml@main
+    uses: mickeygoussetorg/advanced-github-actions-presentation-reusable-workflow/.github/workflows/workflow-B.yml@main
     with:
       username: Elvis      
       
