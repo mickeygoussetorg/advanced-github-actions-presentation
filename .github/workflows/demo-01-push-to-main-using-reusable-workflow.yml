@@ -70,3 +70,34 @@ jobs:
     secrets:
       azure-credentials: ${{ secrets.AZURE_CREDENTIALS }}        
     
+  deploy-QA:
+    name: Deploy to QA environment
+    needs: 
+      - build-app
+    uses: mickeygoussetorg/advanced-github-actions-presentation-reusable-workflow/.github/workflows/deploy-web-app.yml@main
+    with:
+      runs-on: ubuntu-latest
+      dotnet-version: 5.0.x
+      artifact-to-deploy: mywebappbuildartifacts
+      env-name: DEMO01_QA
+      env-url: https://mywebapp-actions-qa.azurewebsites.net
+      app-name: mywebapp-actions
+      app-slot: qa
+    secrets:
+      azure-credentials: ${{ secrets.AZURE_CREDENTIALS }}  
+      
+  deploy-PROD:
+    name: Deploy to PROD environment
+    needs: 
+      - deploy-DEV
+      - deploy-QA
+    uses: mickeygoussetorg/advanced-github-actions-presentation-reusable-workflow/.github/workflows/deploy-web-app.yml@main
+    with:
+      runs-on: ubuntu-latest
+      dotnet-version: 5.0.x
+      artifact-to-deploy: mywebappbuildartifacts
+      env-name: DEMO01_PROD
+      env-url: https://mywebapp-actions.azurewebsites.net
+      app-name: mywebapp-actions
+    secrets:
+      azure-credentials: ${{ secrets.AZURE_CREDENTIALS }}
