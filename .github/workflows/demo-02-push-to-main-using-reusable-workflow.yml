@@ -19,10 +19,10 @@ jobs:
       with:
         dotnet-version: 5.0.x
         solution: "${{ github.workspace }}/mywebapp/mywebapp.sln"
-        configuration: "Release"
+        config: "Release"
         test-location: "${{ github.workspace }}/mywebapp/tests/TestResults"
         cs-proj-file: "${{ github.workspace }}/mywebapp/src/mywebapp.csproj"
-        published-files: mywebap
+        published-files: mywebapp
     
   deploy-DEV:
     name: Deploy to DEV environment
@@ -32,7 +32,7 @@ jobs:
     with:
       runs-on: ubuntu-latest
       dotnet-version: 5.0.x
-      artifact-to-deploy: mywebappbuildartifacts
+      artifact-to-deploy: mywebapp
       env-name: DEMO01_DEV
       env-url: https://mywebapp-actions-dev.azurewebsites.net
       app-name: mywebapp-actions
@@ -48,7 +48,7 @@ jobs:
     with:
       runs-on: ubuntu-latest
       dotnet-version: 5.0.x
-      artifact-to-deploy: mywebappbuildartifacts
+      artifact-to-deploy: mywebapp
       env-name: DEMO01_QA
       env-url: https://mywebapp-actions-qa.azurewebsites.net
       app-name: mywebapp-actions
@@ -65,7 +65,7 @@ jobs:
     with:
       runs-on: ubuntu-latest
       dotnet-version: 5.0.x
-      artifact-to-deploy: mywebappbuildartifacts
+      artifact-to-deploy: mywebapp
       env-name: DEMO01_PROD
       env-url: https://mywebapp-actions.azurewebsites.net
       app-name: mywebapp-actions
