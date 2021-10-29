@@ -19,7 +19,7 @@ jobs:
       with:
         dotnet-version: 5.0.x
         solution: "${{ github.workspace }}/mywebapp/mywebapp.sln"
-        configuration: Release
+        configuration: "Release"
         test-location: "${{ github.workspace }}/mywebapp/tests/TestResults"
         cs-proj-file: "${{ github.workspace }}/mywebapp/src/mywebapp.csproj"
         published-files: mywebap
