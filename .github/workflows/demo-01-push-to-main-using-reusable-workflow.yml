@@ -62,7 +62,7 @@ jobs:
       name: 'DEMO01_DEV'
       url: 'https://mywebapp-actions-dev.azurewebsites.net'
       
-    uses: mickeygoussetorg/advanced-github-actions-presentation-reusable-workflow/.github/workflows/deploy-web-app-yml@main
+    uses: mickeygoussetorg/advanced-github-actions-presentation-reusable-workflow/.github/workflows/deploy-web-app.yml@main
     with:
       runs-on: ubuntu-latest
       dotnet-version: 5.0.x
