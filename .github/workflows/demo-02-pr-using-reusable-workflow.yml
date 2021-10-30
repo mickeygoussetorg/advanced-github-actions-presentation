@@ -1,0 +1,27 @@
+name: Demo 01 - Pull Request
+
+on:
+  pull_request:
+    branches: 
+      - main
+  
+jobs:
+  build-test-branch:
+    name: "Build and Test Of PR"
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+#    - name: Make PR Fail
+#      run: exit 1
+
+     - name: Build / Test / Publish / Upload Code
+       uses: mickeygoussetorg/advanced-github-actions-presentation-composite-action@main
+       with:
+         dotnet-version: 5.0.x
+         solution: "${{ github.workspace }}/mywebapp/mywebapp.sln"
+         config: "Release"
+         test-location: "${{ github.workspace }}/mywebapp/tests/TestResults"
+         cs-proj-file: "${{ github.workspace }}/mywebapp/src/mywebapp.csproj"
+         published-files: mywebapp
