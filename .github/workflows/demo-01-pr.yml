@@ -16,6 +16,11 @@ jobs:
 #    - name: Make PR Fail
 #      run: exit 1
 
+    - name: Verify Linked Issue
+      uses: hattan/verify-linked-issue-action@v1.1.5
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - uses: actions/checkout@v2
       
     - name: Setup .NET Core 5
