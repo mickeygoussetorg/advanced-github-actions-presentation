@@ -1,4 +1,4 @@
-name: Add Dad Joke To Issue Using Slash command
+name: Demo 03 - Add Dad Joke To Issue Using Slash command
 
 on:
   issue_comment:
