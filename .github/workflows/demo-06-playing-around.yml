@@ -21,3 +21,9 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
+        
+      - id: files
+        uses: jitterbit/get-changed-files@v1
+        
+      - name: do something
+        run: echo ${{ steps.files.outputs.all }}
