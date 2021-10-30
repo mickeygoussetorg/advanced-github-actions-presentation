@@ -8,7 +8,7 @@ on:
 
 concurrency:
   group: production-web-app-deploy
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build-app:
