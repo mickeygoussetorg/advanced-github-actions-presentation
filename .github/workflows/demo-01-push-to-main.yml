@@ -5,7 +5,11 @@ on:
   push:
     branches: 
       - main
-  
+
+concurrency:
+  group: production-web-app-deploy
+  cancel-in-progress: false
+
 jobs:
   build-app:
     name: "Build App"
