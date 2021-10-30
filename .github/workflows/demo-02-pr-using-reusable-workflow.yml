@@ -1,4 +1,4 @@
-name: Demo 01 - Pull Request
+name: Demo 02 - Pull Request Using Custom Component Action
 
 on:
   pull_request:
