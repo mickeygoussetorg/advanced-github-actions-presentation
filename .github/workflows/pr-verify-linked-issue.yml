@@ -5,10 +5,11 @@
 name: VerifyIssue
 
 on:
+  workflow_run:
+  
 #  pull_request:
 #    types: [edited, synchronize, opened, reopened]
 #  check_run:
-  workflow_run:
 
 jobs:
   verify_linked_issue:
