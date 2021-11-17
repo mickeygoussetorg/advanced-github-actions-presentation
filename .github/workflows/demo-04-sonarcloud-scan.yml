@@ -1,7 +1,7 @@
 name: Demo 04 - SonarCloud Scan
 on:
   workflow_dispatch:
-  pull_request:
+  push:
     branches: 
       - main
 jobs:
